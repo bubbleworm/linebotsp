@@ -2,8 +2,8 @@
 
 
 $API_URL = 'https://api.line.me/v2/bot/message';
-$ACCESS_TOKEN = 'ouhqskdRP/sUP8uwpjAadPDJz6rj1Y3IR0/ZznmHBgsPmYq6Q+hzdEJ4OXgyw/8NaLy6GLAZYYbLhF/7S6i8K07k3yxT0sWcMEa6ixgJ2c0XIOEKRfUEQAsHVi4PbQU4HEk9GOq/cmdR3iRkQE9e5gdB04t89/1O/w1cDnyilFU='; 
-$channelSecret = 'ba6e01c3eb0671a32e7d9fb3dbabd67d';
+$ACCESS_TOKEN = 'aPbbBoIsQ2D79r6ym5M8r2CHpToFMQ35pFZSpOV2whvqk/UTVKNI1U0dfiO/AybRxnccn0KqXveFXeh+i5OA8YS3nn0OOJj2tisIfSqoxp7Tl6ruxI/lOkQJf6Cy1PM0yInHjDjlrSb33QFYPVxoUAdB04t89/1O/w1cDnyilFU='; 
+$channelSecret = 'c29a430ad5133ec99e9f32f2745e6e5d';
 
 
 $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $ACCESS_TOKEN);
@@ -23,8 +23,9 @@ if ( sizeof($request_array['events']) > 0 ) {
         $text = $event['message']['text'];
         $data = [
             'replyToken' => $reply_token,
-            // 'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]  Debug Detail message
-            'messages' => [['type' => 'text', 'text' => $text ]]
+            //Debug Detail message
+            'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]  
+           // 'messages' => [['type' => 'text', 'text' => $text ]]
         ];
         $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
 
